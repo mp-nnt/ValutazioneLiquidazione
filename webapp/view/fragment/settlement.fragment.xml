@@ -1,0 +1,71 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<f:Form editable="true" id="investmentForm" width="100%">
+		<f:layout>
+			<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
+				emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+		</f:layout>
+		<f:formContainers>
+			<f:FormContainer>
+				<f:formElements>
+					<f:FormElement>
+						<f:fields>
+							<t:Table rows="{/Settlement}" title="{i18n>SettlementTable}" selectionMode="None">
+								<t:columns>
+									<t:Column>
+										<Label text="Fornitore/istituto locatore"/>
+										<t:template>
+											<Text text="{fornitore}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="Descrizione"/>
+										<t:template>
+											<Text text="{descrizione}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="nr. fattura/contratto"/>
+										<t:template>
+											<Text text="{fattura}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="data"/>
+										<t:template>
+											<Text text="{dataS}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="Imponibile Euro"/>
+										<t:template>
+											<Text text="{imponibile}"/>
+										</t:template>
+									</t:Column>
+								</t:columns>
+							</t:Table>
+						</f:fields>
+					</f:FormElement>
+				</f:formElements>
+			</f:FormContainer>
+			<f:FormContainer title="{i18n>privacy}">
+				<f:formElements>
+					<f:FormElement>
+						<f:fields>
+							<FormattedText htmlText="{i18n>privacyText}" width="100%"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>date}">
+						<f:fields>
+							<Text text="{/luogoSettlement}, {/dataSettlement}"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>signature}">
+						<f:fields>
+							<Text text="{/signatureSettlement}"/>
+						</f:fields>
+					</f:FormElement>
+				</f:formElements>
+			</f:FormContainer>
+		</f:formContainers>
+	</f:Form>
+</core:FragmentDefinition>
